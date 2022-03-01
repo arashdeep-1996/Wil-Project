@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -16,6 +16,15 @@
 		5C17E9A027CE565400709D3E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5C17E99E27CE565400709D3E /* LaunchScreen.storyboard */; };
 		5C17E9AB27CE565400709D3E /* SignUpPageTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C17E9AA27CE565400709D3E /* SignUpPageTests.swift */; };
 		5C17E9B627CE565400709D3E /* SignUpPageUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C17E9B527CE565400709D3E /* SignUpPageUITests.swift */; };
+		5C17E9C727CE603A00709D3E /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C17E9C627CE603A00709D3E /* HomeViewController.swift */; };
+		5C17E9CC27CE698E00709D3E /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C17E9CB27CE698E00709D3E /* SignInViewController.swift */; };
+		5C17E9D127CE699B00709D3E /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C17E9D027CE699B00709D3E /* SignUpViewController.swift */; };
+		5C17E9D627CE75CA00709D3E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5C17E9D527CE75CA00709D3E /* GoogleService-Info.plist */; };
+		5C17E9DC27CE785D00709D3E /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 5C17E9DB27CE785D00709D3E /* FirebaseAnalytics */; };
+		5C17E9DE27CE785D00709D3E /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 5C17E9DD27CE785D00709D3E /* FirebaseAuth */; };
+		5C17E9E027CE785D00709D3E /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 5C17E9DF27CE785D00709D3E /* FirebaseFirestore */; };
+		5C17E9E227CE785D00709D3E /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = 5C17E9E127CE785D00709D3E /* FirebaseDatabase */; };
+		5C17E9E727CE7C9A00709D3E /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C17E9E627CE7C9A00709D3E /* Service.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +60,11 @@
 		5C17E9B127CE565400709D3E /* SignUpPageUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SignUpPageUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5C17E9B527CE565400709D3E /* SignUpPageUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpPageUITests.swift; sourceTree = "<group>"; };
 		5C17E9B727CE565400709D3E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5C17E9C627CE603A00709D3E /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		5C17E9CB27CE698E00709D3E /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
+		5C17E9D027CE699B00709D3E /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		5C17E9D527CE75CA00709D3E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		5C17E9E627CE7C9A00709D3E /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +72,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5C17E9DC27CE785D00709D3E /* FirebaseAnalytics in Frameworks */,
+				5C17E9DE27CE785D00709D3E /* FirebaseAuth in Frameworks */,
+				5C17E9E227CE785D00709D3E /* FirebaseDatabase in Frameworks */,
+				5C17E9E027CE785D00709D3E /* FirebaseFirestore in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -108,7 +126,12 @@
 				5C17E99C27CE565400709D3E /* Assets.xcassets */,
 				5C17E99E27CE565400709D3E /* LaunchScreen.storyboard */,
 				5C17E9A127CE565400709D3E /* Info.plist */,
+				5C17E9D527CE75CA00709D3E /* GoogleService-Info.plist */,
 				5C17E99927CE565300709D3E /* SignUpPage.xcdatamodeld */,
+				5C17E9C627CE603A00709D3E /* HomeViewController.swift */,
+				5C17E9CB27CE698E00709D3E /* SignInViewController.swift */,
+				5C17E9D027CE699B00709D3E /* SignUpViewController.swift */,
+				5C17E9E627CE7C9A00709D3E /* Service.swift */,
 			);
 			path = SignUpPage;
 			sourceTree = "<group>";
@@ -147,6 +170,12 @@
 			dependencies = (
 			);
 			name = SignUpPage;
+			packageProductDependencies = (
+				5C17E9DB27CE785D00709D3E /* FirebaseAnalytics */,
+				5C17E9DD27CE785D00709D3E /* FirebaseAuth */,
+				5C17E9DF27CE785D00709D3E /* FirebaseFirestore */,
+				5C17E9E127CE785D00709D3E /* FirebaseDatabase */,
+			);
 			productName = SignUpPage;
 			productReference = 5C17E98D27CE565300709D3E /* SignUpPage.app */;
 			productType = "com.apple.product-type.application";
@@ -218,6 +247,9 @@
 				Base,
 			);
 			mainGroup = 5C17E98427CE565300709D3E;
+			packageReferences = (
+				5C17E9DA27CE785D00709D3E /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
 			productRefGroup = 5C17E98E27CE565300709D3E /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -235,6 +267,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5C17E9A027CE565400709D3E /* LaunchScreen.storyboard in Resources */,
+				5C17E9D627CE75CA00709D3E /* GoogleService-Info.plist in Resources */,
 				5C17E99D27CE565400709D3E /* Assets.xcassets in Resources */,
 				5C17E99827CE565300709D3E /* Main.storyboard in Resources */,
 			);
@@ -261,7 +294,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5C17E9C727CE603A00709D3E /* HomeViewController.swift in Sources */,
+				5C17E9E727CE7C9A00709D3E /* Service.swift in Sources */,
+				5C17E9D127CE699B00709D3E /* SignUpViewController.swift in Sources */,
 				5C17E99527CE565300709D3E /* ViewController.swift in Sources */,
+				5C17E9CC27CE698E00709D3E /* SignInViewController.swift in Sources */,
 				5C17E99127CE565300709D3E /* AppDelegate.swift in Sources */,
 				5C17E99B27CE565300709D3E /* SignUpPage.xcdatamodeld in Sources */,
 				5C17E99327CE565300709D3E /* SceneDelegate.swift in Sources */,
@@ -591,6 +628,40 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		5C17E9DA27CE785D00709D3E /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 8.12.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		5C17E9DB27CE785D00709D3E /* FirebaseAnalytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5C17E9DA27CE785D00709D3E /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalytics;
+		};
+		5C17E9DD27CE785D00709D3E /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5C17E9DA27CE785D00709D3E /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		5C17E9DF27CE785D00709D3E /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5C17E9DA27CE785D00709D3E /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
+		};
+		5C17E9E127CE785D00709D3E /* FirebaseDatabase */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5C17E9DA27CE785D00709D3E /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseDatabase;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		5C17E99927CE565300709D3E /* SignUpPage.xcdatamodeld */ = {
