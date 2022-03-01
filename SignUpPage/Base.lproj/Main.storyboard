@@ -91,7 +91,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s3m-Nh-xCV">
-                                <rect key="frame" x="141" y="550" width="141" height="65"/>
+                                <rect key="frame" x="128" y="627" width="141" height="65"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="linkColor"/>
                                 <fontDescription key="fontDescription" name="TimesNewRomanPSMT" family="Times New Roman" pointSize="21"/>
@@ -103,12 +103,19 @@
                                     <segue destination="8es-ty-wmj" kind="show" identifier="signIn" id="4yF-FT-jie"/>
                                 </connections>
                             </button>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Phone Number" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hY0-Hz-abe">
+                                <rect key="frame" x="20" y="496" width="374" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="TimesNewRomanPSMT" family="Times New Roman" pointSize="18"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="kBz-hf-XfF"/>
                         <color key="backgroundColor" systemColor="systemGroupedBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" id="25y-lS-gtA"/>
                     <connections>
+                        <outlet property="PNo" destination="hY0-Hz-abe" id="rdH-xa-xab"/>
                         <outlet property="Uname" destination="4Sb-FV-gIh" id="tjn-kr-vql"/>
                         <outlet property="email" destination="bEM-JP-W8L" id="MZS-BO-bpd"/>
                         <outlet property="password" destination="uvh-Zu-reE" id="AwB-sD-6oQ"/>

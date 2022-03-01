@@ -47,8 +47,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if indexPath.row == 0//home
         {
-            //let Main: MainViewController = self.storyboard?.instantiateViewController(identifier: "main") as! MainViewController
-            //self.navigationController?.pushViewController(Main, animated: true)
+            
         }
     }
 

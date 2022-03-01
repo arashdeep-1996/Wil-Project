@@ -12,6 +12,7 @@ class SignUpViewController: UIViewController {
     @IBOutlet weak var email: UITextField!
     @IBOutlet weak var signUpButton: UIButton!
     
+    @IBOutlet weak var PNo: UITextField!
     @IBOutlet weak var password: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,11 +31,12 @@ class SignUpViewController: UIViewController {
     }
     */
     @IBAction func signup(_ sender: Any) {
-        Service.signupUser(email: email.text!, password: password.text!, name: Uname.text!, onSuccess:  {
+        Service.signupUser(email: email.text!, password: password.text!, name: Uname.text!, phoneNo: PNo.text!,onSuccess:  {
             self.performSegue(withIdentifier: "signIn", sender: nil)
         }) { (err) in
             self.present(Service.createAlertController(title: "Error", message: err!.localizedDescription), animated: true, completion: nil)
         }
+        
 
         
     
