@@ -126,6 +126,77 @@
             </objects>
             <point key="canvasLocation" x="2175.36231884058" y="337.5"/>
         </scene>
+        <!--User Profile-->
+        <scene sceneID="qkT-B8-V9L">
+            <objects>
+                <viewController id="TGe-3j-WqQ" customClass="ProfileViewController" customModule="SignUpPage" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="1eK-It-g17">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qwo-Lx-Ge7">
+                                <rect key="frame" x="20" y="348" width="90" height="49"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="TimesNewRomanPSMT" family="Times New Roman" pointSize="21"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Phone No." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7U0-qv-RRS">
+                                <rect key="frame" x="20" y="428" width="90" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="TimesNewRomanPSMT" family="Times New Roman" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Email" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fTa-Jd-Wdq">
+                                <rect key="frame" x="20" y="501" width="90" height="48"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="TimesNewRomanPSMT" family="Times New Roman" pointSize="21"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jPH-D6-E1l">
+                                <rect key="frame" x="118" y="355" width="276" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="TimesNewRomanPSMT" family="Times New Roman" pointSize="21"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uN6-qV-Ako">
+                                <rect key="frame" x="118" y="431" width="276" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="TimesNewRomanPSMT" family="Times New Roman" pointSize="21"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zht-wh-icI">
+                                <rect key="frame" x="118" y="508" width="276" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="TimesNewRomanPSMT" family="Times New Roman" pointSize="21"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AkE-3A-ztl">
+                                <rect key="frame" x="102" y="628" width="174" height="66"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="linkColor"/>
+                                <fontDescription key="fontDescription" name="TimesNewRomanPSMT" family="Times New Roman" pointSize="22"/>
+                                <state key="normal" title="Update Info">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Q1c-z9-5gg"/>
+                        <color key="backgroundColor" systemColor="systemGroupedBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="User Profile" id="Jvc-ea-qnT"/>
+                    <connections>
+                        <outlet property="email" destination="zht-wh-icI" id="P2H-5c-fhI"/>
+                        <outlet property="name" destination="jPH-D6-E1l" id="zMq-Sy-s9o"/>
+                        <outlet property="phNo" destination="uN6-qV-Ako" id="dap-FR-dwo"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="M4C-wK-RsH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4350.7246376811599" y="838.39285714285711"/>
+        </scene>
         <!--Sign In View Controller-->
         <scene sceneID="Y8Z-xY-xYE">
             <objects>
@@ -191,7 +262,7 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="tHG-sY-3rB"/>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="CiU-XB-du5"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4lC-iZ-Qg7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -233,6 +304,7 @@
                                                 </tableViewCellContentView>
                                                 <connections>
                                                     <outlet property="lbl" destination="KQt-c9-dES" id="FK5-YA-Dsx"/>
+                                                    <segue destination="TGe-3j-WqQ" kind="show" identifier="profile" id="aUT-a1-PNE"/>
                                                 </connections>
                                             </tableViewCell>
                                         </prototypes>
@@ -242,7 +314,7 @@
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="o4A-Q0-DIh"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" systemColor="systemGroupedBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" title="All tasks" id="fjz-Qi-uly">
                         <barButtonItem key="leftBarButtonItem" title="Item" image="lineweight" catalog="system" id="baT-dW-s8O">
@@ -263,7 +335,7 @@
         <!--Navigation Controller-->
         <scene sceneID="EzB-P1-Sh3">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="F6p-JY-nJp" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="welcomeViewId" automaticallyAdjustsScrollViewInsets="NO" modalTransitionStyle="crossDissolve" modalPresentationStyle="overFullScreen" id="F6p-JY-nJp" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="G1C-Qv-DuN"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="JmI-JW-keY">
@@ -277,19 +349,16 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3s7-B0-tSV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3440.579710144928" y="-86.383928571428569"/>
+            <point key="canvasLocation" x="3400" y="-86"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="4yF-FT-jie"/>
+        <segue reference="LWy-r3-TUn"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="lineweight" catalog="system" width="128" height="110"/>
         <systemColor name="linkColor">
             <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemGroupedBackgroundColor">
             <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

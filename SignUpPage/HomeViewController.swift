@@ -5,6 +5,7 @@
 //  Created by user206151 on 3/1/22.
 //
 import UIKit
+import Firebase
 class TableViewCell: UITableViewCell {
 
     @IBOutlet weak var lbl: UILabel!
@@ -34,6 +35,13 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
            sideView.isHidden = true
            sidebar.backgroundColor = UIColor.groupTableViewBackground
            sideBarOpen = false
+        let defaults = UserDefaults.standard
+        if defaults.bool(forKey: "isUserSignedIn"){
+            let viewController = self.storyboard?.instantiateViewController(identifier: "welconViewId") as! UINavigationController
+            viewController.modalTransitionStyle = .crossDissolve
+            viewController.modalPresentationStyle = .overFullScreen
+            self.present(viewController, animated: true, completion: nil)
+        }
        }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return arrdata.count
@@ -45,9 +53,21 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         return cell
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if indexPath.row == 0//home
+        if indexPath.row == 3//Profile
         {
-            
+            self.performSegue(withIdentifier: "profile", sender: nil)
+        }
+        if indexPath.row == 4//logout
+        {
+            let auth = Auth.auth()
+            do{
+                try auth.signOut()
+                let defaults = UserDefaults.standard
+                defaults.set(false, forKey: "is UserSignedIn")
+                self.dismiss(animated: true, completion: nil)
+            }catch let signOutError {
+                self.present(Service.createAlertController(title: "Error", message: signOutError.localizedDescription), animated: true, completion: nil)
+            }
         }
     }
 

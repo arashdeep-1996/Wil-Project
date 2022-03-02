@@ -25,6 +25,7 @@
 		5C17E9E027CE785D00709D3E /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 5C17E9DF27CE785D00709D3E /* FirebaseFirestore */; };
 		5C17E9E227CE785D00709D3E /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = 5C17E9E127CE785D00709D3E /* FirebaseDatabase */; };
 		5C17E9E727CE7C9A00709D3E /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C17E9E627CE7C9A00709D3E /* Service.swift */; };
+		5C3D1A4327CEEB1000905EEB /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C3D1A4227CEEB1000905EEB /* ProfileViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +66,7 @@
 		5C17E9D027CE699B00709D3E /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		5C17E9D527CE75CA00709D3E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		5C17E9E627CE7C9A00709D3E /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
+		5C3D1A4227CEEB1000905EEB /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,6 +134,7 @@
 				5C17E9CB27CE698E00709D3E /* SignInViewController.swift */,
 				5C17E9D027CE699B00709D3E /* SignUpViewController.swift */,
 				5C17E9E627CE7C9A00709D3E /* Service.swift */,
+				5C3D1A4227CEEB1000905EEB /* ProfileViewController.swift */,
 			);
 			path = SignUpPage;
 			sourceTree = "<group>";
@@ -300,6 +303,7 @@
 				5C17E99527CE565300709D3E /* ViewController.swift in Sources */,
 				5C17E9CC27CE698E00709D3E /* SignInViewController.swift in Sources */,
 				5C17E99127CE565300709D3E /* AppDelegate.swift in Sources */,
+				5C3D1A4327CEEB1000905EEB /* ProfileViewController.swift in Sources */,
 				5C17E99B27CE565300709D3E /* SignUpPage.xcdatamodeld in Sources */,
 				5C17E99327CE565300709D3E /* SceneDelegate.swift in Sources */,
 			);
