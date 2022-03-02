@@ -9,8 +9,8 @@ import UIKit
 import MobileCoreServices
 class UpdateViewController: UIViewController {
     @IBOutlet weak var coverPhoto: UIImageView!
-    @IBOutlet weak var ProfilePhoto: UIButton!
     @IBOutlet weak var updatebutton: UIButton!
+    @IBOutlet weak var ProfilePhoto: UIImageView!
     @IBOutlet weak var phNo: UITextField!
     @IBOutlet weak var name: UITextField!
     override func viewDidLoad() {
@@ -20,6 +20,7 @@ class UpdateViewController: UIViewController {
         ProfilePhoto.layer.backgroundColor = UIColor.black.cgColor
         ProfilePhoto.layer.cornerRadius = ProfilePhoto.frame.height/2
         ProfilePhoto.clipsToBounds = true
+      
         
         let defaults = UserDefaults.standard
         Service.getUserInfo(onSuccess:{
@@ -30,7 +31,7 @@ class UpdateViewController: UIViewController {
         }        // Do any additional setup after loading the view.
     }
     
-
+    
     @IBAction func onClickImage(_ sender: Any) {
         actionSheet()
         }
@@ -82,6 +83,20 @@ class UpdateViewController: UIViewController {
 }
 extension UpdateViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate{
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        
+        print(info)
+        if let editingImage = info[UIImagePickerController.InfoKey(rawValue: convertInfoKey(UIImagePickerController.InfoKey.editedImage))] as? UIImage{
+            print(editingImage)
+            self.ProfilePhoto.image = editingImage
+        }
+        picker.dismiss(animated: true, completion: nil)
+    }
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        self.dismiss(animated: true,completion: nil)
+    }
+    func convertFromUIimageToDict( _ input :[UIImagePickerController.InfoKey : Any]) -> [String : Any]{
+        return Dictionary(uniqueKeysWithValues: input.map({ key , value in (key.rawValue, value)}))
+    }
+    func convertInfoKey( _ input : UIImagePickerController.InfoKey) -> String{
+        return input.rawValue
     }
 }
