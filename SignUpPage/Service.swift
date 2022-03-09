@@ -9,7 +9,7 @@ import UIKit
 import Firebase
 
 class Service{
-    static func signupUser(email: String, password: String,name: String,phoneNo: String, onSuccess: @escaping () -> Void, onError: @escaping (_ error: Error?) -> Void){
+    static func signupUser(email: String, password: String,name: String,phoneNo: String,image: String, onSuccess: @escaping () -> Void, onError: @escaping (_ error: Error?) -> Void){
         let auth = Auth.auth()
         auth.createUser(withEmail: email, password: password){(authResult, err) in
             if err != nil {
@@ -18,7 +18,7 @@ class Service{
                 return
             }
             
-uploadToDatabase(email: email, name: name, password: password,phoneNo: phoneNo, onSuccess: onSuccess)
+            uploadToDatabase(email: email, name: name, password: password,phoneNo: phoneNo,image: image, onSuccess: onSuccess)
         }
         
     }
@@ -43,7 +43,23 @@ uploadToDatabase(email: email, name: name, password: password,phoneNo: phoneNo, 
             onError(error)
         }
     }
-    static func uploadToDatabase(email: String, name: String,password: String,phoneNo: String, onSuccess: @escaping () -> Void){
+    static func addData(uid: String, values: [String: AnyObject], onSuccess: @escaping () -> Void){
+        let ref = Database.database().reference()
+        let usersReference = ref.child("users").child(uid)
+        usersReference.setValue(values)
+        
+       /* usersReference.updateChildValues(values, withCompletionBlock: { (err, ref) in
+            
+            if let err = err {
+                print(err)
+                return
+            }
+            
+            
+        })*/
+        onSuccess()
+    }
+    static func uploadToDatabase(email: String, name: String,password: String,phoneNo: String,image: String, onSuccess: @escaping () -> Void){
         let ref = Database.database().reference()
         let uid = Auth.auth().currentUser?.uid
         ref.child("users").child(uid!).setValue(["email" : email, "name" : name, "password" : password, "PhoneNo" : phoneNo])

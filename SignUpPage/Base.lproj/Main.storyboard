@@ -65,13 +65,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="OnToDoList" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f8N-uV-zh0">
-                                <rect key="frame" x="119" y="166" width="177" height="39"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="TimesNewRomanPSMT" family="Times New Roman" pointSize="35"/>
-                                <color key="textColor" systemColor="linkColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="User Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4Sb-FV-gIh">
                                 <rect key="frame" x="20" y="292" width="374" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -99,12 +92,28 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <action selector="signup:" destination="80B-Qy-E2j" eventType="touchUpInside" id="MA4-xX-VoX"/>
-                                    <segue destination="8es-ty-wmj" kind="show" identifier="signIn" id="4yF-FT-jie"/>
+                                    <action selector="signUpBtn_TouchUpInside:" destination="80B-Qy-E2j" eventType="touchUpInside" id="Cfm-uT-yQ2"/>
                                 </connections>
                             </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="profile" translatesAutoresizingMaskIntoConstraints="NO" id="IFl-ZO-3Er">
+                                <rect key="frame" x="146" y="142" width="123" height="107"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vUV-HD-MX5">
+                                <rect key="frame" x="156" y="253" width="103" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <state key="normal" title="Tap to change"/>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="OnToDoList" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f8N-uV-zh0">
+                                <rect key="frame" x="119" y="88" width="177" height="39"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="TimesNewRomanPSMT" family="Times New Roman" pointSize="35"/>
+                                <color key="textColor" systemColor="linkColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Phone Number" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hY0-Hz-abe">
-                                <rect key="frame" x="20" y="496" width="374" height="34"/>
+                                <rect key="frame" x="20" y="505" width="374" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="TimesNewRomanPSMT" family="Times New Roman" pointSize="18"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -115,11 +124,11 @@
                     </view>
                     <navigationItem key="navigationItem" id="25y-lS-gtA"/>
                     <connections>
-                        <outlet property="PNo" destination="hY0-Hz-abe" id="rdH-xa-xab"/>
-                        <outlet property="Uname" destination="4Sb-FV-gIh" id="tjn-kr-vql"/>
-                        <outlet property="email" destination="bEM-JP-W8L" id="MZS-BO-bpd"/>
-                        <outlet property="password" destination="uvh-Zu-reE" id="AwB-sD-6oQ"/>
-                        <outlet property="signUpButton" destination="s3m-Nh-xCV" id="V2Q-vc-egR"/>
+                        <outlet property="PNo" destination="hY0-Hz-abe" id="bXc-1o-Yvi"/>
+                        <outlet property="emailTextField" destination="bEM-JP-W8L" id="BTZ-Ev-xSq"/>
+                        <outlet property="passwordTextField" destination="uvh-Zu-reE" id="XfM-BT-pbo"/>
+                        <outlet property="profileImage" destination="IFl-ZO-3Er" id="cQQ-aR-yeh"/>
+                        <outlet property="usernameTextField" destination="4Sb-FV-gIh" id="4GS-WR-e6b"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EBJ-fT-WRj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -448,9 +457,6 @@
             <point key="canvasLocation" x="5524.6376811594209" y="841.74107142857144"/>
         </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="LWy-r3-TUn"/>
-    </inferredMetricsTieBreakers>
     <resources>
         <image name="lineweight" catalog="system" width="128" height="110"/>
         <image name="profile" width="225" height="225"/>
