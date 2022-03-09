@@ -11,7 +11,6 @@ class UpdateViewController: UIViewController {
     @IBOutlet weak var coverPhoto: UIImageView!
     @IBOutlet weak var updatebutton: UIButton!
     @IBOutlet weak var ProfilePhoto: UIImageView!
-    @IBOutlet weak var phNo: UITextField!
     @IBOutlet weak var name: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,7 +24,6 @@ class UpdateViewController: UIViewController {
         let defaults = UserDefaults.standard
         Service.getUserInfo(onSuccess:{
             self.name.text = defaults.string(forKey: "userNameKey")
-            self.phNo.text = defaults.string(forKey: "userphoneKey")
         }) { (error) in
             self.present(Service.createAlertController(title: "Error", message: error!.localizedDescription), animated: true, completion: nil)
         }        // Do any additional setup after loading the view.
