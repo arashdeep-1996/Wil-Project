@@ -9,19 +9,7 @@ import UIKit
 import Firebase
 
 class Service{
-    static func signupUser(email: String, password: String,name: String,phoneNo: String,image: String, onSuccess: @escaping () -> Void, onError: @escaping (_ error: Error?) -> Void){
-        let auth = Auth.auth()
-        auth.createUser(withEmail: email, password: password){(authResult, err) in
-            if err != nil {
-                onError(err!)
-                //self.present(Service.createAlertController(title: "Error", message: err!.localizedDescription), animated: true, completion: nil)
-                return
-            }
-            
-            uploadToDatabase(email: email, name: name, password: password,phoneNo: phoneNo,image: image, onSuccess: onSuccess)
-        }
-        
-    }
+    
     static func getUserInfo(onSuccess: @escaping () -> Void, onError: @escaping (_ error: Error?) -> Void){
         let ref = Database.database().reference()
         let defaults = UserDefaults.standard
@@ -43,28 +31,7 @@ class Service{
             onError(error)
         }
     }
-    static func addData(uid: String, values: [String: AnyObject], onSuccess: @escaping () -> Void){
-        let ref = Database.database().reference()
-        let usersReference = ref.child("users").child(uid)
-        usersReference.setValue(values)
-        
-       /* usersReference.updateChildValues(values, withCompletionBlock: { (err, ref) in
-            
-            if let err = err {
-                print(err)
-                return
-            }
-            
-            
-        })*/
-        onSuccess()
-    }
-    static func uploadToDatabase(email: String, name: String,password: String,phoneNo: String,image: String, onSuccess: @escaping () -> Void){
-        let ref = Database.database().reference()
-        let uid = Auth.auth().currentUser?.uid
-        ref.child("users").child(uid!).setValue(["email" : email, "name" : name, "password" : password, "PhoneNo" : phoneNo])
-        onSuccess()
-    }
+    
     static func createAlertController(title: String, message: String) -> UIAlertController {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         let OKAction = UIAlertAction(title: "ok", style: .default){ (action) in

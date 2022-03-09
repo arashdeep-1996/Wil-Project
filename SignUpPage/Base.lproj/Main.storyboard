@@ -112,19 +112,12 @@
                                 <color key="textColor" systemColor="linkColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Phone Number" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hY0-Hz-abe">
-                                <rect key="frame" x="20" y="505" width="374" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="TimesNewRomanPSMT" family="Times New Roman" pointSize="18"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="kBz-hf-XfF"/>
                         <color key="backgroundColor" systemColor="systemGroupedBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" id="25y-lS-gtA"/>
                     <connections>
-                        <outlet property="PNo" destination="hY0-Hz-abe" id="bXc-1o-Yvi"/>
                         <outlet property="emailTextField" destination="bEM-JP-W8L" id="BTZ-Ev-xSq"/>
                         <outlet property="passwordTextField" destination="uvh-Zu-reE" id="XfM-BT-pbo"/>
                         <outlet property="profileImage" destination="IFl-ZO-3Er" id="cQQ-aR-yeh"/>

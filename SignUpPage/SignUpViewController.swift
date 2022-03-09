@@ -13,8 +13,6 @@ class SignUpViewController: UIViewController{
     @IBOutlet weak var usernameTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var emailTextField: UITextField!
-
-    @IBOutlet weak var PNo: UITextField!
     @IBOutlet weak var profileImage: UIImageView!
     
     var selectedImage: UIImage?
@@ -111,7 +109,7 @@ class SignUpViewController: UIViewController{
                                }
                                
                                guard let url = url else { return }
-                               let values = ["name": name, "email": email, "profileImageUrl": url.absoluteString]
+                            let values = ["name": name, "email": email, "profileImageUrl": url.absoluteString]
                                
                             self.registerUserIntoDatabaseWithUID(uid: uid, values: values as [String : AnyObject])
                            })
