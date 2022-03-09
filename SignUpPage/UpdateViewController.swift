@@ -7,32 +7,54 @@
 
 import UIKit
 import MobileCoreServices
+import Firebase
 class UpdateViewController: UIViewController {
     @IBOutlet weak var coverPhoto: UIImageView!
     @IBOutlet weak var updatebutton: UIButton!
     @IBOutlet weak var ProfilePhoto: UIImageView!
     @IBOutlet weak var name: UITextField!
+    var users = [User]()
     override func viewDidLoad() {
+        fetchUser()
         super.viewDidLoad()
         ProfilePhoto.layer.borderWidth = 1
         ProfilePhoto.layer.masksToBounds = false
         ProfilePhoto.layer.backgroundColor = UIColor.black.cgColor
         ProfilePhoto.layer.cornerRadius = ProfilePhoto.frame.height/2
         ProfilePhoto.clipsToBounds = true
-      
-        
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(SignUpViewController.handleSelectProfileImageView))
+        /*
         let defaults = UserDefaults.standard
         Service.getUserInfo(onSuccess:{
             self.name.text = defaults.string(forKey: "userNameKey")
+            self.phNo.text = defaults.string(forKey: "userphoneKey")
+            self.email.text = defaults.string(forKey: "userEmailKey")
         }) { (error) in
             self.present(Service.createAlertController(title: "Error", message: error!.localizedDescription), animated: true, completion: nil)
-        }        // Do any additional setup after loading the view.
-    }
-    
-    
-    @IBAction func onClickImage(_ sender: Any) {
-        actionSheet()
+ */
         }
+    @objc func handleSelectProfileImageView() {
+               actionSheet()
+    }
+        func fetchUser() {
+                Database.database().reference().child("users").observe(.childAdded, with: { (snapshot) in
+                    
+                    if let dictionary = snapshot.value as? [String: AnyObject] {
+                        let user = User(dictionary: dictionary)
+                        //self.users.append(user)
+                        self.name.text = user.name
+                        
+                        
+                        
+                        
+                        if let profileImageUrl = user.profileImageUrl {
+                            self.ProfilePhoto.loadImageUsingCacheWithUrlString(profileImageUrl)
+                        }                    }
+                    
+                    }, withCancel: nil)
+            }
+    
+    
     func actionSheet(){
         let alert = UIAlertController(title: "Choose Image", message: nil, preferredStyle: .actionSheet)
         alert.addAction(UIAlertAction(title: "open camera", style: .default, handler: { (handler) in
