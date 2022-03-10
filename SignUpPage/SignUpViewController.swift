@@ -111,6 +111,11 @@ class SignUpViewController: UIViewController{
                                guard let url = url else { return }
                             let values = ["name": name, "email": email, "profileImageUrl": url.absoluteString]
                                
+                            let alert = UIAlertController(title: "Successfully created", message: "You are a new user of this app.", preferredStyle: .alert)
+                            let OKAction = UIAlertAction(title: "ok", style: .default){ (action) in
+                                alert.dismiss(animated: true, completion: nil)
+                            }
+                            alert.addAction(OKAction)
                             self.registerUserIntoDatabaseWithUID(uid: uid, values: values as [String : AnyObject])
                            })
                            
@@ -129,8 +134,8 @@ class SignUpViewController: UIViewController{
                                print(err)
                                return
                            }
-                           
-                           self.dismiss(animated: true, completion: nil)
+                        self.performSegue(withIdentifier: "done", sender: nil)
+                        self.dismiss(animated: true, completion: nil)
                        })
                    }
 }

@@ -93,6 +93,7 @@
                                 </state>
                                 <connections>
                                     <action selector="signUpBtn_TouchUpInside:" destination="80B-Qy-E2j" eventType="touchUpInside" id="Cfm-uT-yQ2"/>
+                                    <segue destination="8es-ty-wmj" kind="show" identifier="done" id="Jel-Oi-7o2"/>
                                 </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="profile" translatesAutoresizingMaskIntoConstraints="NO" id="IFl-ZO-3Er">
@@ -287,17 +288,17 @@
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <prototypes>
-                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" id="i05-Rj-YZP" customClass="TableViewCell" customModule="SignUpPage" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="28" width="282" height="44"/>
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" rowHeight="59" id="i05-Rj-YZP" customClass="TableViewCell" customModule="SignUpPage" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="28" width="282" height="59"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="i05-Rj-YZP" id="07y-cz-PnC">
-                                                    <rect key="frame" x="0.0" y="0.0" width="282" height="44"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="282" height="59"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KQt-c9-dES">
-                                                            <rect key="frame" x="16" y="0.0" width="250" height="32"/>
+                                                            <rect key="frame" x="16" y="0.0" width="250" height="59"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                            <fontDescription key="fontDescription" name="TimesNewRomanPSMT" family="Times New Roman" pointSize="20"/>
+                                                            <fontDescription key="fontDescription" name="TimesNewRomanPSMT" family="Times New Roman" pointSize="24"/>
                                                             <color key="textColor" systemColor="linkColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
@@ -419,6 +420,9 @@
             <point key="canvasLocation" x="5524.6376811594209" y="841.74107142857144"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="Jel-Oi-7o2"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="lineweight" catalog="system" width="128" height="110"/>
         <image name="profile" width="225" height="225"/>
