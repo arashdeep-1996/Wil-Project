@@ -49,10 +49,6 @@ class UpdateViewController: UIViewController {
                         let user = User(dictionary: dictionary)
                         //self.users.append(user)
                         self.name.text = user.name
-                        
-                        
-                        
-                        
                         if let profileImageUrl = user.profileImageUrl {
                             self.ProfilePhoto.loadImageUsingCacheWithUrlString(profileImageUrl)
                         }                    }
@@ -92,29 +88,52 @@ class UpdateViewController: UIViewController {
         }
         
     }
-    /*
-    // MARK: - Navigation
-
-    
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
     @IBAction func UpdateAction(_ sender: Any) {
-        
+       
+        let databaseRef = Database.database().reference()
+        let imageName = NSUUID().uuidString
+               
+        let storageRef = Storage.storage().reference().child("profile_images").child("\(imageName).png")
+               
+        if let uploadData = self.ProfilePhoto.image!.pngData()
+               {
+           
+                   storageRef.putData(uploadData, metadata: nil, completion: { (metadata, error) in
+                       if error != nil{
+                           print(error!)
+                           return
+                       }
+                       storageRef.downloadURL(completion: { (url, error) in
+                           if error != nil{
+                               print(error!)
+                               return
+                           }
+                           if let urlText = url?.absoluteString{
+                            
+                            databaseRef.child("users").child((Auth.auth().currentUser?.uid)!).updateChildValues(
+                                
+                                ["name" : self.name.text!,"profileImageUrl" : urlText], withCompletionBlock: { (error, ref) in
+                                   if error != nil{
+                                       print(error!)
+                                       return
+                                   }
+                               })                    }
+                       })
+                   })
+               }
     }
     
+
+
 }
 extension UpdateViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate{
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         print(info)
-        if ProfilePhoto.accessibilityPerformMagicTap(){
+        
         if let editingImage = info[UIImagePickerController.InfoKey(rawValue: convertInfoKey(UIImagePickerController.InfoKey.editedImage))] as? UIImage{
             print(editingImage)
             self.ProfilePhoto.image = editingImage
-        }}
+        }
         else if let cover = info[UIImagePickerController.InfoKey(rawValue: convertInfoKey(UIImagePickerController.InfoKey.editedImage))] as? UIImage{
             self.coverPhoto.image = cover
             
