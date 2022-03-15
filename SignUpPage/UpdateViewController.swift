@@ -22,7 +22,13 @@ class UpdateViewController: UIViewController {
         ProfilePhoto.layer.backgroundColor = UIColor.black.cgColor
         ProfilePhoto.layer.cornerRadius = ProfilePhoto.frame.height/2
         ProfilePhoto.clipsToBounds = true
-        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(SignUpViewController.handleSelectProfileImageView))
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(UpdateViewController.handleSelectProfileImageView))
+        ProfilePhoto.addGestureRecognizer(tapGesture)
+        ProfilePhoto.isUserInteractionEnabled = true
+        let tapGesture2 = UITapGestureRecognizer(target: self, action: #selector(UpdateViewController.handleSelectProfileImageView))
+        coverPhoto.addGestureRecognizer(tapGesture2)
+        coverPhoto.isUserInteractionEnabled = true
+        
         /*
         let defaults = UserDefaults.standard
         Service.getUserInfo(onSuccess:{
@@ -104,9 +110,14 @@ class UpdateViewController: UIViewController {
 extension UpdateViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate{
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         print(info)
+        if ProfilePhoto.accessibilityPerformMagicTap(){
         if let editingImage = info[UIImagePickerController.InfoKey(rawValue: convertInfoKey(UIImagePickerController.InfoKey.editedImage))] as? UIImage{
             print(editingImage)
             self.ProfilePhoto.image = editingImage
+        }}
+        else if let cover = info[UIImagePickerController.InfoKey(rawValue: convertInfoKey(UIImagePickerController.InfoKey.editedImage))] as? UIImage{
+            self.coverPhoto.image = cover
+            
         }
         picker.dismiss(animated: true, completion: nil)
     }
