@@ -122,7 +122,9 @@ class SignUpViewController: UIViewController{
                        })
                    }
                })
-                              }
+       // performSegue(withIdentifier: "update", sender: self)
+        
+    }
 
                private func registerUserIntoDatabaseWithUID(uid: String, values: [String: AnyObject]) {
                        let ref = Database.database().reference(fromURL: "https://ontodo-9e1be-default-rtdb.firebaseio.com/")
@@ -134,9 +136,10 @@ class SignUpViewController: UIViewController{
                                print(err)
                                return
                            }
-                        self.performSegue(withIdentifier: "done", sender: nil)
-                        self.dismiss(animated: true, completion: nil)
+                       
+                        //self.dismiss(animated: true, completion: nil)
                        })
+                performSegue(withIdentifier: "done", sender: self)
                    }
 }
 

@@ -117,9 +117,12 @@ class UpdateViewController: UIViewController {
                                        print(error!)
                                        return
                                    }
-                               })                    }
+                               })
+                            
+                           }
                        })
                    })
+            performSegue(withIdentifier: "update", sender: self)
                }
     }
     
