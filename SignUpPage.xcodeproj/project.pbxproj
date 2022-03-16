@@ -29,6 +29,7 @@
 		5C3F14F127D7A24D00E2F2D7 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 5C3F14F027D7A24D00E2F2D7 /* FirebaseAuth */; };
 		5C3F14F927D7B6C000E2F2D7 /* HelperExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C3F14F827D7B6C000E2F2D7 /* HelperExtension.swift */; };
 		5C54152B27CFAD46000D7094 /* UpdateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C54152A27CFAD46000D7094 /* UpdateViewController.swift */; };
+		5C8008E127E21987007E01DE /* ForgetPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C8008E027E21987007E01DE /* ForgetPasswordViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,6 +73,7 @@
 		5C3D1A4227CEEB1000905EEB /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		5C3F14F827D7B6C000E2F2D7 /* HelperExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelperExtension.swift; sourceTree = "<group>"; };
 		5C54152A27CFAD46000D7094 /* UpdateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateViewController.swift; sourceTree = "<group>"; };
+		5C8008E027E21987007E01DE /* ForgetPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgetPasswordViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,6 +145,7 @@
 				5C3D1A4227CEEB1000905EEB /* ProfileViewController.swift */,
 				5C54152A27CFAD46000D7094 /* UpdateViewController.swift */,
 				5C3F14F827D7B6C000E2F2D7 /* HelperExtension.swift */,
+				5C8008E027E21987007E01DE /* ForgetPasswordViewController.swift */,
 			);
 			path = SignUpPage;
 			sourceTree = "<group>";
@@ -316,6 +319,7 @@
 				5C3D1A4327CEEB1000905EEB /* ProfileViewController.swift in Sources */,
 				5C17E99B27CE565300709D3E /* SignUpPage.xcdatamodeld in Sources */,
 				5C17E99327CE565300709D3E /* SceneDelegate.swift in Sources */,
+				5C8008E127E21987007E01DE /* ForgetPasswordViewController.swift in Sources */,
 				5C54152B27CFAD46000D7094 /* UpdateViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

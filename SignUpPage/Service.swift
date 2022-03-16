@@ -92,4 +92,13 @@ class Service{
         alert.addAction(OKAction)
         return alert
     }
+    static func resetPassword(email: String, resetCompletion: @escaping (Result<Bool,Error>) -> Void){
+        Auth.auth().sendPasswordReset(withEmail: email, completion: { (error) in
+            if let error = error {
+                resetCompletion(.failure(error))
+            } else {
+                resetCompletion(.success(true))
+            }
+        })
+    }
 }
