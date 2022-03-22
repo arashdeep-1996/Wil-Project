@@ -21,7 +21,7 @@ class TableViewCell: UITableViewCell {
     }
 
 }
-class HomeViewController: UIViewController, UITableViewDelegate, UITableViewDataSource{
+class HomeViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet weak var sideView: UIView!
     @IBOutlet weak var sidebar: UITableView!
@@ -53,6 +53,10 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         return cell
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if indexPath.row == 1 //task group
+        {
+            self.performSegue(withIdentifier: "task group", sender: nil)
+        }
         if indexPath.row == 3//Profile
         {
             self.performSegue(withIdentifier: "profile", sender: nil)

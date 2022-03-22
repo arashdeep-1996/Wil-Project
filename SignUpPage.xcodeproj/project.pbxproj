@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5C0FB47227EA160B00E0D87E /* TaskGroupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C0FB47127EA160B00E0D87E /* TaskGroupViewController.swift */; };
 		5C17E99127CE565300709D3E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C17E99027CE565300709D3E /* AppDelegate.swift */; };
 		5C17E99327CE565300709D3E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C17E99227CE565300709D3E /* SceneDelegate.swift */; };
 		5C17E99527CE565300709D3E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C17E99427CE565300709D3E /* ViewController.swift */; };
@@ -50,6 +51,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5C0FB47127EA160B00E0D87E /* TaskGroupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskGroupViewController.swift; sourceTree = "<group>"; };
 		5C17E98D27CE565300709D3E /* SignUpPage.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SignUpPage.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5C17E99027CE565300709D3E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5C17E99227CE565300709D3E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -146,6 +148,7 @@
 				5C54152A27CFAD46000D7094 /* UpdateViewController.swift */,
 				5C3F14F827D7B6C000E2F2D7 /* HelperExtension.swift */,
 				5C8008E027E21987007E01DE /* ForgetPasswordViewController.swift */,
+				5C0FB47127EA160B00E0D87E /* TaskGroupViewController.swift */,
 			);
 			path = SignUpPage;
 			sourceTree = "<group>";
@@ -317,6 +320,7 @@
 				5C17E99127CE565300709D3E /* AppDelegate.swift in Sources */,
 				5C3F14F927D7B6C000E2F2D7 /* HelperExtension.swift in Sources */,
 				5C3D1A4327CEEB1000905EEB /* ProfileViewController.swift in Sources */,
+				5C0FB47227EA160B00E0D87E /* TaskGroupViewController.swift in Sources */,
 				5C17E99B27CE565300709D3E /* SignUpPage.xcdatamodeld in Sources */,
 				5C17E99327CE565300709D3E /* SceneDelegate.swift in Sources */,
 				5C8008E127E21987007E01DE /* ForgetPasswordViewController.swift in Sources */,

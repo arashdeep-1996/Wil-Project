@@ -38,7 +38,6 @@ class ProfileViewController: UIViewController {
                     
                     if let dictionary = snapshot.value as? [String: AnyObject] {
                         let user = User(dictionary: dictionary)
-                        //self.users.append(user)
                         self.name.text = user.name
                         self.email.text = user.email
                         
