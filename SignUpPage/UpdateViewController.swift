@@ -43,7 +43,11 @@ class UpdateViewController: UIViewController {
                actionSheet()
     }
         func fetchUser() {
-                Database.database().reference().child("users").observe(.childAdded, with: { (snapshot) in
+            guard let uid = Auth.auth().currentUser?.uid else {
+                print("user not found")
+                return
+            }
+            Database.database().reference().child("users").child(uid).observe(.value, with: { (snapshot) in
                     
                     if let dictionary = snapshot.value as? [String: AnyObject] {
                         let user = User(dictionary: dictionary)

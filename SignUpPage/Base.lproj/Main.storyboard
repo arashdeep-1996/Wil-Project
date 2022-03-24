@@ -418,7 +418,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="M49-f1-b57">
-                                <rect key="frame" x="20" y="408" width="374" height="312"/>
+                                <rect key="frame" x="20" y="408" width="374" height="454"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
@@ -429,54 +429,35 @@
                                             <rect key="frame" x="0.0" y="0.0" width="374" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wnk-4T-Ltg">
-                                                    <rect key="frame" x="20" y="0.0" width="334" height="44"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M7Z-3p-ege">
+                                                    <rect key="frame" x="20" y="0.0" width="344" height="52"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" name="TimesNewRomanPSMT" family="Times New Roman" pointSize="20"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="lbl" destination="Wnk-4T-Ltg" id="q19-3b-axH"/>
+                                            <outlet property="lbl" destination="M7Z-3p-ege" id="n5t-ZD-8JG"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tSt-Wh-cP1">
-                                <rect key="frame" x="43" y="789" width="153" height="50"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" systemColor="linkColor"/>
-                                <fontDescription key="fontDescription" name="TimesNewRomanPSMT" family="Times New Roman" pointSize="20"/>
-                                <state key="normal" title="Add Task group">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <connections>
-                                    <action selector="addTask:" destination="N0d-rf-GFM" eventType="touchUpInside" id="asv-ab-Xkv"/>
-                                    <segue destination="VtK-gs-1sy" kind="show" identifier="add task group" id="N84-Mg-DjH"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ij3-2m-HZS">
-                                <rect key="frame" x="249" y="789" width="145" height="50"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" systemColor="linkColor"/>
-                                <fontDescription key="fontDescription" name="TimesNewRomanPSMT" family="Times New Roman" pointSize="20"/>
-                                <state key="normal" title="Delete task group">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <connections>
-                                    <action selector="deleteTask:" destination="N0d-rf-GFM" eventType="touchUpInside" id="b0L-yK-XgZ"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="iqn-Vy-5Ie"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <navigationItem key="navigationItem" id="7cg-bG-Eqn"/>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="7cg-bG-Eqn">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="5Mj-WL-0nZ">
+                            <connections>
+                                <action selector="addTaskGroup:" destination="N0d-rf-GFM" id="MLB-d4-g8C"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <outlet property="addTaskGroup" destination="tSt-Wh-cP1" id="FZ2-nm-7wa"/>
-                        <outlet property="deleteTaskGroup" destination="Ij3-2m-HZS" id="Hd7-Gt-q11"/>
                         <outlet property="email" destination="WqS-3u-FSX" id="Ifn-hh-EyM"/>
                         <outlet property="name" destination="ZFj-l6-xI1" id="iK1-0j-i8o"/>
                         <outlet property="tableView" destination="M49-f1-b57" id="yi8-5J-XMY"/>
