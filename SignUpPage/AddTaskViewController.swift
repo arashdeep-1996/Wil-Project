@@ -15,16 +15,23 @@
 
 import UIKit
 import Firebase
+struct todoList1{
+    var name: String
+    
+}
 class AddingTaskViewController: UIViewController, UITextViewDelegate {
     
     let status = ["progress","completed"]
     var pickerview = UIPickerView()
    let placeholder = "Task Description"
-
+    var todolist: [todoList1] = []
+    @IBOutlet weak var taskGroupName: UITextField!
     @IBOutlet weak var taskName: UITextField!
     @IBOutlet weak var taskDescription: UITextView!
     @IBOutlet weak var taskDeadline: UITextField!
     @IBOutlet weak var taskStatus: UITextField!
+    var databaseRef: DatabaseReference?
+    let uid = Auth.auth().currentUser?.uid
     override func viewDidLoad() {
         super.viewDidLoad()
         let date = Date()
@@ -61,24 +68,33 @@ class AddingTaskViewController: UIViewController, UITextViewDelegate {
         formatter.dateFormat = "dd/MM/yyyy"
         taskDeadline.text = formatter.string(from: sender.date)
     }
-
+    func fetch(){
+        let ref = Database.database().reference(withPath: "users").child(uid!).child("task group").child("tasks").childByAutoId()
+        ref.observeSingleEvent(of: .value) { (snapshot) in
+            for child in snapshot.children.allObjects as! [DataSnapshot]{
+                let todoName = child.key
+                let todoRef = ref.child(todoName)
+                todoRef.observeSingleEvent(of: .value, with: { (todoSnapshot) in
+                    let value = todoSnapshot.value as? NSDictionary
+                    self.todolist.append(todoList1(name: todoName))
+                    self.taskGroupName.text! = todoName
+                    
+                })
+            }
+        }
+    }
     @IBAction func saveTask(_ sender: Any) {
         
-        if(taskName.text!.isEmpty || taskDescription.text.isEmpty || ((taskDeadline.text?.isEmpty) != nil)){
-            let alert = UIAlertController(title: "Error", message: "Please enter all details", preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { (action) in
-                alert.dismiss(animated: true, completion: nil)
-            }))
-        }
-        else{
+        
             // Data storing into firebase
-            
+        let ref = Database.database().reference().child("users").child(self.uid!).child("task group")
             var name = taskName.text
             var description = taskDescription.text
             var taskDate = taskDeadline.text
             var taskState = taskStatus.text
+            ref.child(name!).setValue(["description": description!, "taskDeadline": taskDate!, "taskStatus": taskState!])
             
-        }
+        
     }
 
 }

@@ -469,7 +469,7 @@
             </objects>
             <point key="canvasLocation" x="5226.0869565217399" y="-82.366071428571431"/>
         </scene>
-        <!--Show Task View Controller-->
+        <!--Tasks-->
         <scene sceneID="22b-3U-vl9">
             <objects>
                 <viewController id="VtK-gs-1sy" customClass="ShowTaskViewController" customModule="SignUpPage" customModuleProvider="target" sceneMemberID="viewController">
@@ -508,7 +508,7 @@
                         <viewLayoutGuide key="safeArea" id="dcp-k1-q4S"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <navigationItem key="navigationItem" id="VMg-cz-ZQU">
+                    <navigationItem key="navigationItem" title="Tasks" id="VMg-cz-ZQU">
                         <barButtonItem key="rightBarButtonItem" title="Item" image="plus" catalog="system" id="5Pt-X1-l4T">
                             <connections>
                                 <action selector="addTask:" destination="VtK-gs-1sy" id="Pgz-qr-VVN"/>
@@ -524,7 +524,7 @@
             </objects>
             <point key="canvasLocation" x="6108.6956521739139" y="-85.044642857142847"/>
         </scene>
-        <!--Adding Task View Controller-->
+        <!--Add Task-->
         <scene sceneID="W41-G3-5Rh">
             <objects>
                 <viewController id="Yqh-cA-ilD" customClass="AddingTaskViewController" customModule="SignUpPage" customModuleProvider="target" sceneMemberID="viewController">
@@ -533,7 +533,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="afM-6P-Ww8">
-                                <rect key="frame" x="20" y="185" width="363" height="238"/>
+                                <rect key="frame" x="20" y="244" width="363" height="238"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <accessibility key="accessibilityConfiguration" label="Description"/>
@@ -541,20 +541,14 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Task Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Bu8-tN-hzk">
-                                <rect key="frame" x="20" y="121" width="363" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Date deadline" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pmZ-xG-mEn">
-                                <rect key="frame" x="20" y="451" width="363" height="34"/>
+                                <rect key="frame" x="20" y="503" width="363" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Status" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1SI-P6-wLp">
-                                <rect key="frame" x="20" y="517" width="363" height="34"/>
+                                <rect key="frame" x="26" y="572" width="363" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -563,15 +557,31 @@
                                 <rect key="frame" x="122" y="621" width="146" height="80"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Add"/>
+                                <connections>
+                                    <action selector="saveTask:" destination="Yqh-cA-ilD" eventType="touchUpInside" id="V9j-e3-8nJ"/>
+                                </connections>
                             </button>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Had-7h-BIr">
+                                <rect key="frame" x="26" y="109" width="363" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Task Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Bu8-tN-hzk">
+                                <rect key="frame" x="20" y="172" width="363" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="0Es-fu-mV8"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <navigationItem key="navigationItem" id="NuG-UV-SIM"/>
+                    <navigationItem key="navigationItem" title="Add Task" id="NuG-UV-SIM"/>
                     <connections>
                         <outlet property="taskDeadline" destination="pmZ-xG-mEn" id="hnc-hh-dkx"/>
                         <outlet property="taskDescription" destination="afM-6P-Ww8" id="jQ1-r8-KLb"/>
+                        <outlet property="taskGroupName" destination="Had-7h-BIr" id="uOn-AI-ghE"/>
                         <outlet property="taskName" destination="Bu8-tN-hzk" id="UJo-Ht-Ks9"/>
                         <outlet property="taskStatus" destination="1SI-P6-wLp" id="OZA-mt-Ejp"/>
                     </connections>

@@ -104,9 +104,7 @@ class TaskGroupViewController: UIViewController, UITableViewDelegate, UITableVie
             tableView.reloadData()
         }
     }
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        self.performSegue(withIdentifier: "addTask", sender: nil)
-    }
+    
     @IBAction func addTaskGroup(_ sender: Any) {
         //self.performSegue(withIdentifier: "addTaskGroup", sender: nil)
         let todoAlert = UIAlertController(title: "New Group", message: "Add new task group", preferredStyle: .alert)
