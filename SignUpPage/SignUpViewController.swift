@@ -19,7 +19,7 @@ class SignUpViewController: UIViewController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        passwordTextField.isSecureTextEntry = true
         profileImage.layer.borderWidth = 1
         profileImage.layer.masksToBounds = false
         profileImage.layer.backgroundColor = UIColor.black.cgColor
@@ -127,7 +127,7 @@ class SignUpViewController: UIViewController{
     }
 
                private func registerUserIntoDatabaseWithUID(uid: String, values: [String: AnyObject]) {
-                       let ref = Database.database().reference(fromURL: "https://ontodo-9e1be-default-rtdb.firebaseio.com/")
+                       let ref = Database.database().reference(fromURL: "https://wilproject-97b31-default-rtdb.firebaseio.com/")
                        let usersReference = ref.child("users").child(uid)
                        
                        usersReference.updateChildValues(values, withCompletionBlock: { (err, ref) in

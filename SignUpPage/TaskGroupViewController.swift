@@ -104,26 +104,9 @@ class TaskGroupViewController: UIViewController, UITableViewDelegate, UITableVie
             tableView.reloadData()
         }
     }
-     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
-        {
-            self.performSegue(withIdentifier: "editNote", sender: self)
-        }
-        
-        override func prepare(for segue: UIStoryboardSegue, sender: Any?)
-        {
-            if(segue.identifier == "editNote")
-            {
-                let indexPath = tableView.indexPathForSelectedRow!
-                
-                let noteDetail = segue.destination as? ShowTaskViewController
-                
-                let selectedNote : todoList!
-                selectedNote = nonDeletedNotes()[indexPath.row]
-                //noteDetail!.selectedNote = selectedNote
-                
-                tableView.deselectRow(at: indexPath, animated: true)
-            }
-        }
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.performSegue(withIdentifier: "addTask", sender: nil)
+    }
     @IBAction func addTaskGroup(_ sender: Any) {
         //self.performSegue(withIdentifier: "addTaskGroup", sender: nil)
         let todoAlert = UIAlertController(title: "New Group", message: "Add new task group", preferredStyle: .alert)
@@ -144,5 +127,8 @@ class TaskGroupViewController: UIViewController, UITableViewDelegate, UITableVie
         present(todoAlert, animated: true, completion: nil)
     }
     
-
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
+            {
+                self.performSegue(withIdentifier: "addTask", sender: self)
+            }
 }

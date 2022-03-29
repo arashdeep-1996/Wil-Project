@@ -6,16 +6,38 @@
 //
 
 import UIKit
+import Firebase
+class CellTask: UITableViewCell {
 
+ 
+    @IBOutlet weak var lbl: UILabel!
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        // Initialization code
+    }
+
+    override func setSelected(_ selected: Bool, animated: Bool) {
+        super.setSelected(selected, animated: animated)
+
+        // Configure the view for the selected state
+    }
+
+}
 class ShowTaskViewController: UIViewController {
 
+    @IBOutlet weak var tableView: UITableView!
+    var databaseRef: DatabaseReference?
+    let uid = Auth.auth().currentUser?.uid
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
     
-
+    @IBAction func addTask(_ sender: Any) {
+        
+    }
+    
     /*
     // MARK: - Navigation
 
